@@ -35,7 +35,22 @@
 		      up();
 		  })
 		}
-		  
+		$('ul').hover(function(){
+		    $('ul').stop()
+		},function(){
+		    up();
+		});
+		
+		// 或者下面：
+
+		// $('ul').on('mouseover',function(){
+		// 	$('ul').stop()
+		// 	console.log(222222222222222)
+		// }).on('mouseout',function(){
+		// 	up();
+		// })
+
+		
 	</script>
 </body>
 </html>
