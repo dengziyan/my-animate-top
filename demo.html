@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>经验-简洁版文字向上无缝滚动</title>
+	<style>
+		*{margin: 0;padding:0;}
+		ul{position: relative;}
+		ul li{list-style: none;height: 20px;}
+		.box{height: 100px;width: 230px;overflow: hidden;}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>11111111111111111111111</li>
+			<li>22222222222222222222222</li>
+			<li>33333333333333333333333</li>
+			<li>44444444444444444444444</li>
+			<li>55555555555555555555555</li>
+			<li>66666666666666666666666</li>
+		</ul>
+	</div>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		up();
+		function up(){
+			$('ul').animate({ //中奖结果
+		      'top': (- $('ul li').height()) + 'px'
+		  }, 1500, 'linear', function () {
+		      $('ul').css({'top': '0px'})
+		      .find("li:first").appendTo($('ul'));
+		      up();
+		  })
+		}
+		  
+	</script>
+</body>
+</html>
